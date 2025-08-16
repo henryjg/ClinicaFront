@@ -1,32 +1,38 @@
 <template>
   <!-- Filtros superiores -->
   <div class="d-print-none card mb-3">
-    <div class="card-body p-3">
-      <div class="row">
-        <div class="col-6 d-flex align-items-center">
-          <label class="form-label px-2 text-secondary text-sm f-w-600 align-content-center text-nowrap">Especialidad</label>
-          <input class="form-control f-6 mx-2" style="min-width: 250px;" placeholder="Seleccionar especialidad" />
+    <div class="card-body py-3 px-4">
+      <div class="row align-items-center gx-2 gy-2">
+        <div class="col-lg-4 col-md-5 col-12">
+          <label class="form-label text-secondary text-sm f-w-600 mb-1">Especialidad</label>
+          <select class="form-select">
+            <option value="">Seleccionar especialidad</option>
+            <option>Cardiología</option>
+            <option>Pediatría</option>
+            <option>Dermatología</option>
+            <option>Traumatología</option>
+          </select>
         </div>
-        <div class="col-4 d-flex align-items-center">
-          <label class="form-label px-2 text-secondary text-sm f-w-600 text-nowrap">Nombre</label>
-          <input class="form-control f-6 mx-2" style="min-width: 220px;" placeholder="Buscar por nombre" />
+        <div class="col-lg-4 col-md-4 col-12">
+          <label class="form-label text-secondary text-sm f-w-600 mb-1">Nombre</label>
+          <input class="form-control" placeholder="Buscar por nombre" />
         </div>
-      </div>
-      <div class="d-flex pt-1">
-        <div class="d-flex">
-          <label class="form-label px-2 text-secondary text-sm f-w-600 align-content-center">Estado</label>
-          <select class="form-select form-select-sm bg-light ">
+        <div class="col-lg-2 col-md-2 col-6">
+          <label class="form-label text-secondary text-sm f-w-600 mb-1">Estado</label>
+          <select class="form-select bg-light">
             <option value="">Todos</option>
             <option>Activo</option>
             <option>Inactivo</option>
           </select>
         </div>
-        <button class="btn btn-primary mx-1">
-          <i class="ti ti-search"></i> Buscar
-        </button>
-        <button class="btn btn-secondary btn-sm mx-1">
-          <i class="fa fa-broom"></i>
-        </button>
+        <div class="col-lg-2 col-md-1 col-6 d-flex align-items-end gap-2">
+          <button class="btn btn-primary w-50">
+            <i class="ti ti-search"></i> Buscar
+          </button>
+          <button class="btn btn-secondary w-50">
+            <i class="fa fa-broom"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

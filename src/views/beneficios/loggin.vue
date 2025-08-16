@@ -8,7 +8,7 @@
             <p class="text-white py-3 f-w-300">Descubre todos los lugares donde puedes disfrutar de promociones, compras, eventos, experiencias y mucho más.</p>
         </div>
 
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label class="form-label">Tipo de Usuario</label>
             <select v-model="tipoUsuario" class="form-control bg-white text-dark">
                 <option value="" disabled selected>Selecciona tipo de usuario</option>
@@ -17,27 +17,26 @@
                 <option value="Negocio">Negocio</option>
                 <option value="Administrador">Control</option>
             </select>
-        </div>
+        </div> -->
         
         <div class="mb-3">
-            <label v-if="tipoUsuario!=='Negocio'" class="form-label">N° Documento de Identidad:</label>
-            <label v-else class="form-label">Número de RUC:</label>
+            <label class="form-label">N° Documento de Identidad:</label>
             <input type="text" v-model="usuario" class="form-control bg-white text-dark" >
         </div>
         
-        <div v-if="tipoUsuario=='Administrador' || tipoUsuario=='Negocio'" class="mb-3">
+        <div class="mb-3">
             <input type="password" v-model="contrasena" class="form-control bg-white text-dark" placeholder="Contraseña">
         </div>
 
         <div class="d-grid mt-4">
-            <button v-if="tipoUsuario=='Administrador' || tipoUsuario=='Negocio'" type="button" @click="IniciarSession" class="btn btn-primary"><i class="fas fa-user-lock m-r-10"></i> Ingresar</button>
-            <button v-else type="button" @click="IniciarSession_solodocumento" class="btn btn-primary"><i class="fas fa-user-lock m-r-10"></i> Ingresar sin documento</button>
+            <button  type="button" @click="IniciarSession" class="btn btn-primary"><i class="fas fa-user-lock m-r-10"></i> Ingresar</button>
+            <!-- <button v-else type="button" @click="IniciarSession_solodocumento" class="btn btn-primary"><i class="fas fa-user-lock m-r-10"></i> Ingresar sin documento</button> -->
         </div>
-        <div class="d-grid mt-4 text-center">
+        <!-- <div class="d-grid mt-4 text-center">
             <RouterLink to="/beneficios/GenerarPassword" class="text-hover-light btn btn-warning bg-yellow-900 border-0">
               <i class="fas fa-check"></i> Activar Acceso
             </RouterLink>
-        </div>
+        </div> -->
         <!-- <div class="d-grid mt-2 text-center">
           <RouterLink to="/beneficios/RecuperarPassword" class="text-hover-warning">Recuperar Contraseña</RouterLink>
         </div> -->
@@ -46,7 +45,7 @@
 
     <div class="col-md-8 d-none d-sm-block">
       <div class="overflow-hidden d-flex align-items-center justify-content-center custom-div">
-        <img src="/src/assets/images/bgcliente.avif" class="img-centered">
+        <img src="/src/assets/images/clinica_fondo.webp" class="img-centered">
         
       </div>
     </div>

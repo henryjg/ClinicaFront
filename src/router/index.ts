@@ -162,6 +162,10 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
+    path: '/',
+    redirect: { name: 'Loggin' }
+  },
+  {
     path: '/beneficios',
     name: 'ApBeneficios',
     component: () => import('../views/VistaBeneficios.vue'),

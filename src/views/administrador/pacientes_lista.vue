@@ -70,7 +70,7 @@
             ref="dataTableRef"
           >
             <template #default="{ item, index, currentPage, itemsPerPage, selectable, isItemSelected, toggleSelectItem, itemIdKey, handleMouseDown, isDragging, focusedRowIndex, isKeyboardNavigation }">
-              <tr @click="handleRowClick(item, index, $event)" @mousedown="handleMouseDown(index, $event)"
+              <tr @mousedown="handleMouseDown(index, $event)" @click="toggleSelectItem(item[itemIdKey])"
                 :class="{ 
                 'bg-blue-100 bg-opacity-25': selectable && isItemSelected(item[itemIdKey]) && !(isKeyboardNavigation && focusedRowIndex === index),
                 'keyboard-focused': isKeyboardNavigation && focusedRowIndex === index
@@ -97,7 +97,8 @@
                 <td><span :class="item.estado === 'Activo' ? 'badge bg-success' : 'badge bg-danger'">{{ item.estado }}</span></td>
                 <td class="text-wrap d-flex">
                   <button class="btn btn-light-warning btn-sm me-1"><i class="ti ti-edit"></i></button>
-                  <button class="btn btn-light-danger btn-sm"><i class="ti ti-trash"></i></button>
+                  <button class="btn btn-light-danger btn-sm me-1"><i class="ti ti-trash"></i></button>
+                  <button class="btn btn-light-info btn-sm" @click="abrirOffcanvas(item)"><i class="fa fa-eye"></i></button>
                 </td>
               </tr>
             </template>
@@ -241,24 +242,9 @@ export default defineComponent({
     // Estado para offcanvas
     const pacienteSeleccionado = ref<any | null>(null);
 
-    // Mostrar offcanvas al seleccionar paciente
-    const handleRowClick = (
-      item: Record<string, unknown>,
-      index: number,
-      event: MouseEvent
-    ) => {
-      const target = event.target as HTMLElement;
-      if (
-        target.closest('button') ||
-        target.closest('a') ||
-        target.closest('.btn') ||
-        target.tagName === 'INPUT'
-      ) {
-        return;
-      }
-      if (dataTableRef.value && dataTableRef.value.toggleSelectItem) {
-        dataTableRef.value.toggleSelectItem(item.id);
-      }
+    // Selección de fila sin abrir offcanvas
+    // El offcanvas se abre solo con el botón de acciones
+    const abrirOffcanvas = (item: any) => {
       pacienteSeleccionado.value = item;
     };
 
@@ -273,9 +259,9 @@ export default defineComponent({
       isLoading,
       dataTableRef,
       onSelectionChange,
-      handleRowClick,
       pacienteSeleccionado,
-      cerrarOffcanvas
+      cerrarOffcanvas,
+      abrirOffcanvas
     };
   }
 });
