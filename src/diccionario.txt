@@ -1,0 +1,26 @@
+Datos de tabla inmuble
+*****Leads:
+estadoLead: 
+
+Lead Generado
+Contactado
+Lead Calificado
+Altamente Interedado
+En Negociación
+Cierre Pendiente
+Cliente
+No Calificado
+Perdido 
+
+
+
+** Cliente Historial 
+Malo 
+Regular
+Muy bueno 
+Excelente
+
+
+** Cliente Estado 
+Activo
+Inactivo

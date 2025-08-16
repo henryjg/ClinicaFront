@@ -1,0 +1,625 @@
+@font-face {
+  font-family: 'BentonSans';
+  src: url('fonts/bentonSans/BentonSansBook.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'BentonSans';
+  src: url('fonts/bentonSans/BentonSansBook.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar_beneficios{
+  background-color: #102ab8 !important;
+
+}
+.fondocabecera{
+  background-image: url("../assets/images/banner/b1.avif") !important;
+  background-size: cover;
+  background-position: 0%;
+}
+
+.w-90{
+  width: 90% !important;
+}
+
+.text-Agetta{
+  font-family: "Agetta", Sans-serif;
+}
+.text-BentonSans{
+  font-family: "BentonSans", Sans-serif;
+}
+
+
+
+.text-justify {
+  text-align: justify;
+}
+
+.bg_azul{
+  background:#000F6C !important;
+}
+
+.top-80{
+  top: 80px !important;
+}
+
+.wid-250{
+  width: 300px !important;
+}
+/* LOADER */
+
+.lds-ellipsis,
+.lds-ellipsis div {
+  box-sizing: border-box;
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 50px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 20.33333px;
+  width: 13.33333px;
+  height: 13.33333px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 30%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+
+
+.ui-panel-header {
+  background-color: #E0ECFF;
+  background: -webkit-linear-gradient(top,var(--ui-head-start) 0, var(--ui-head-end) 100%) !important;
+  background: -moz-linear-gradient(top, var(--ui-head-start) 0, var(--ui-head-end) 100%) !important;
+  background: -o-linear-gradient(top, var(--ui-head-start) 0, var(--ui-head-end) 100%) !important;
+  background: linear-gradient(to bottom, var(--ui-head-start) 0, var(--ui-head-end) 100%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#E0ECFF,GradientType=0);
+  color: #0E2D5F;
+}
+
+.ui-border-dialogo {
+  border-color: #dddddd #95B8E7 #95B8E7 #95B8E7 !important;
+}
+
+
+.text-inter{
+  font-family: "InterVariable", Sans-serif;
+}
+
+
+.text-inter-re{
+  font-family: "Inter", Sans-serif;
+}
+
+
+
+@font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/InterVariable/InterVariable.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: InterVariable;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/InterVariable/InterVariable-Italic.woff2?v=4.0') format('woff2');
+}
+
+/* legacy name "Inter var" (Oct 2023) */
+@font-face {
+    font-family: 'Inter var';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/InterVariable/InterVariable.woff2?v=4.0') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter var';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/InterVariable/InterVariable-Italic.woff2?v=4.0') format('woff2');
+}
+
+/* static fonts */
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Thin.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-ThinItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-ExtraLight.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-ExtraLightItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Light.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-LightItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Regular.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Italic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Medium.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-MediumItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-SemiBold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-SemiBoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-Bold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-BoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("fonts/InterVariable/Inter-ExtraBold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url("font-files/Inter-ExtraBoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("font-files/Inter-Black.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url("font-files/Inter-BlackItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Thin.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url("font-files/InterDisplay-ThinItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("font-files/InterDisplay-ExtraLight.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url("font-files/InterDisplay-ExtraLightItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Light.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("font-files/InterDisplay-LightItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Regular.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Italic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Medium.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("font-files/InterDisplay-MediumItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("font-files/InterDisplay-SemiBold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url("font-files/InterDisplay-SemiBoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Bold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("font-files/InterDisplay-BoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("font-files/InterDisplay-ExtraBold.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url("font-files/InterDisplay-ExtraBoldItalic.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("font-files/InterDisplay-Black.woff2?v=4.0") format("woff2");
+}
+
+@font-face {
+    font-family: InterDisplay;
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url("font-files/InterDisplay-BlackItalic.woff2?v=4.0") format("woff2");
+}
+
+.multiselect{
+  min-height: 32px !important;
+}
+.multiselect__single {
+  font-size: 14px !important;
+}
+.multiselect__select::before{
+  top: 50% !important;
+}
+.multiselect__tags{
+  padding: 0px 30px 0 8px !important;
+  min-height: 30.15px !important;
+  border: 1px solid #cbd5e1 !important;
+  background: #f6fbfd !important;
+}
+.multiselect__input, .multiselect__single{
+  background: none !important;
+  padding-top: 4px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+.multiselect__placeholder {
+  margin-bottom: 5px !important;
+  padding-top: 4px !important;
+}
+
+
+
+.file-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-file-label {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #d7edf7;
+  color: #353535;
+  border: 2px;
+  border-radius: 4px;
+  border-style:dashed;
+  border-color: #aed0e0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-label:hover {
+  background-color: #0056b3;
+}
+
+
+.modal_head_bg{
+  background-color: #d7ebf9;
+    background: -webkit-linear-gradient(top, #EFF5FF 0, #d7ebf9 100%);
+    background: -moz-linear-gradient(top, #EFF5FF 0, #d7ebf9 100%);
+    background: -o-linear-gradient(top, #EFF5FF 0, #d7ebf9 100%);
+    background: linear-gradient(to bottom, #EFF5FF 0, #d7ebf9 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#d7ebf9,GradientType=0);
+    color: #2779AA;
+}
+
+.card_default_bg{
+  background-color: #F2F2F2;
+  background: -webkit-linear-gradient(top, #ffffff 0, #F2F2F2 100%);
+  background: -moz-linear-gradient(top, #ffffff 0, #F2F2F2 100%);
+  background: -o-linear-gradient(top, #ffffff 0, #F2F2F2 100%);
+  background: linear-gradient(to bottom, #ffffff 0, #F2F2F2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#F2F2F2,GradientType=0);
+  color: #777;
+}
+.bg_sunny{
+  background-color: #817865;
+  background: -webkit-linear-gradient(top, #a69e8d 0, #817865 100%);
+  background: -moz-linear-gradient(top, #a69e8d 0, #817865 100%);
+  background: -o-linear-gradient(top, #a69e8d 0, #817865 100%);
+  background: linear-gradient(to bottom, #a69e8d 0, #817865 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#a69e8d,endColorstr=#817865,GradientType=0);
+  color: #ffffff;
+}
+
+.bg_blue_gradient{
+  background-color: #1c3372;
+  background: -webkit-linear-gradient(top, #10286e 0, #0e1e48 100%);
+  background: -moz-linear-gradient(top, #10286e 0, #0e1e48 100%);
+  background: -o-linear-gradient(top, #10286e 0, #0e1e48 100%);
+  background: linear-gradient(to bottom, #10286e 0, #0e1e48 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#10286e,endColorstr=#0e1e48,GradientType=0);
+  color: #ffffff;
+}
+
+.circular-div {
+  width: 200px;        /* Ajusta el tamaño según sea necesario */
+  height: 200px;       /* Ajusta el tamaño según sea necesario */
+  border-radius: 50%;  /* Hace que el div sea circular */
+  overflow: hidden;    /* Oculta cualquier parte de la imagen que se salga del círculo */
+  display: flex;       /* Utiliza flexbox para centrar la imagen */
+  justify-content: center;  /* Centra la imagen horizontalmente */
+  align-items: center;      /* Centra la imagen verticalmente */
+  border: 4px white solid;
+}
+
+.circular-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra completamente el círculo */
+}
+
+
+/* //Transiciones */
+.v-enter-active{
+    transition: opacity 0.5s ease;
+}
+
+.v-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+.nofocus_nobg{
+  background-image: none !important;
+
+}
+.nofocus_nobg:focus{ 
+  border: 0px !important;
+  box-shadow:none !important;
+}
+
+
+/* ---------- */
+.text-amarillo {
+  color: rgb(217 144 4) !important;
+}
+/* Ocultar el logo de Google y otros textos */
+.gmnoprint {
+  display: none !important;
+}

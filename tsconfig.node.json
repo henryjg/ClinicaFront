@@ -1,0 +1,31 @@
+{ //tsconfig.node.json
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "include": [
+    "vite.config.ts",
+    "vitest.config.ts",
+    "cypress.config.ts",
+    "nightwatch.conf.ts",
+    "playwright.config.ts",
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.js",
+    "src/config.ts"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "strict": true,
+    "lib": ["ES6", "DOM"],
+    "jsx": "preserve",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "types": ["node"]
+  }
+}
