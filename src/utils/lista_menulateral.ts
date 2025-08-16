@@ -199,20 +199,20 @@ export const menuItems: MenuItem[] = [
     route: '',  
     role_ids: [4]
   },
-  {
-    tipe: 'link',
-    text: 'Pedientes',
-    icon: 'fas fa-solid fa-hourglass-half',
-    route: '/office/vercuponespendientes',
-    role_ids: [4] // Visible para Administrador y Licencias
-  },
-  {
-    tipe: 'link',
-    text: 'Utilizados',
-    icon: 'fas fa-solid fa-check',
-    route: '/office/vercuponesusados',
-    role_ids: [4] // Visible para Administrador y Licencias
-  },
+  // {
+  //   tipe: 'link',
+  //   text: 'Pedientes',
+  //   icon: 'fas fa-solid fa-hourglass-half',
+  //   route: '/office/vercuponespendientes',
+  //   role_ids: [4] // Visible para Administrador y Licencias
+  // },
+  // {
+  //   tipe: 'link',
+  //   text: 'Utilizados',
+  //   icon: 'fas fa-solid fa-check',
+  //   route: '/office/vercuponesusados',
+  //   role_ids: [4] // Visible para Administrador y Licencias
+  // },
   //---------------------------------------------------
   //---------------------------------------------------
   {
@@ -224,13 +224,13 @@ export const menuItems: MenuItem[] = [
   },
   
  
-  {
-    tipe: 'link',
-    text: 'Oficina',
-    icon: 'fas fa-box',
-    route: '/office/oficina',
-    role_ids: [1, 4]  // Solo visible para Administrador
-  },
+  // {
+  //   tipe: 'link',
+  //   text: 'Oficina',
+  //   icon: 'fas fa-box',
+  //   route: '/office/oficina',
+  //   role_ids: [1, 4]  // Solo visible para Administrador
+  // },
   // {
   //   tipe: 'link',
   //   text: 'Sliders',
@@ -246,13 +246,13 @@ export const menuItems: MenuItem[] = [
   //   route: '/office/categoria',
   //   role_ids: [1, 4]  // Solo visible para Administrador
   // },
-  {
-    tipe: 'link',
-    text: 'Novedades',
-    icon: 'fas fa-file',
-    route: '/office/pagina',
-    role_ids: [1, 4]  // Solo visible para Administrador
-  },
+  // {
+  //   tipe: 'link',
+  //   text: 'Novedades',
+  //   icon: 'fas fa-file',
+  //   route: '/office/pagina',
+  //   role_ids: [1, 4]  // Solo visible para Administrador
+  // },
   // {
   //   tipe: 'link',
   //   text: 'Proyectos IMP',
@@ -260,13 +260,13 @@ export const menuItems: MenuItem[] = [
   //   route: '/office/PubliLink',
   //   role_ids: [1, 4]  // Solo visible para Administrador
   // },
-  {
-    tipe: 'link',
-    text: 'Pagina Web',
-    icon: 'fas fa-solid fa-window-maximize',
-    route: '/office/editarcampos',
-    role_ids: [4] // Visible para Administrador y Licencias
-  },
+  // {
+  //   tipe: 'link',
+  //   text: 'Pagina Web',
+  //   icon: 'fas fa-solid fa-window-maximize',
+  //   route: '/office/editarcampos',
+  //   role_ids: [4] // Visible para Administrador y Licencias
+  // },
   // {
   //   tipe: 'link',
   //   text: 'Preguntas Frecuentes',
