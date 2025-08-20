@@ -9,7 +9,7 @@
           <div v-for="dato in datosRecopilados" :key="dato.key" class="d-flex align-items-center mb-2">
             <span class="me-2 fs-5" v-html="dato.icon"></span>
             <span class="me-2">{{ dato.label }}</span>
-            <span :class="dato.habilitado ? 'badge bg-success' : 'badge bg-secondary'" class="ms-auto">{{ dato.habilitado ? 'Habilitado' : 'Inactivo' }}</span>
+            <span :class="dato.habilitado ? 'badge bg-success' : 'badge bg-secondary'" class="ms-3">{{ dato.habilitado ? 'Habilitado' : 'Inactivo' }}</span>
           </div>
         </div>
         <hr>
@@ -21,7 +21,7 @@
           <div v-for="sistema in sistemasMedicion" :key="sistema.key" class="d-flex align-items-center mb-2">
             <span class="me-2 fs-5" v-html="sistema.icon"></span>
             <span class="me-2">{{ sistema.label }}</span>
-            <span :class="sistema.habilitado ? 'badge bg-success' : 'badge bg-secondary'" class="ms-auto">{{ sistema.habilitado ? 'Habilitado' : 'Inactivo' }}</span>
+            <span :class="sistema.habilitado ? 'badge bg-success' : 'badge bg-secondary'" class="ms-3">{{ sistema.habilitado ? 'Habilitado' : 'Inactivo' }}</span>
           </div>
         </div>
 
@@ -79,12 +79,12 @@ export default defineComponent({
   setup() {
     // Datos recopilados
     const datosRecopilados = ref([
-      { key: 'peso', label: 'Peso', icon: '<i class="fa fa-weight-scale text-info"></i>', habilitado: false },
+  { key: 'peso', label: 'Peso', icon: '<i class="fa fa-weight-hanging text-info"></i>', habilitado: false },
       { key: 'estatura', label: 'Estatura', icon: '<i class="fa fa-ruler-vertical text-warning"></i>', habilitado: true },
-      { key: 'imc', label: 'Índice de masa corporal', icon: '<i class="fa fa-person text-success"></i>', habilitado: true },
-      { key: 'temperatura', label: 'Temperatura', icon: '<i class="fa fa-temperature-half text-primary"></i>', habilitado: true },
+      { key: 'imc', label: 'Índice de masa corporal', icon: '<i class="fa fa-user text-success"></i>', habilitado: true },
+      { key: 'temperatura', label: 'Temperatura', icon: '<i class="fa fa-thermometer-half text-primary"></i>', habilitado: true },
       { key: 'frecuencia_respiratoria', label: 'Frecuencia respiratoria', icon: '<i class="fa fa-wave-square text-warning"></i>', habilitado: true },
-      { key: 'frecuencia_cardiaca', label: 'Frecuencia cardiaca', icon: '<i class="fa fa-heart-pulse text-danger"></i>', habilitado: true },
+      { key: 'frecuencia_cardiaca', label: 'Frecuencia cardiaca', icon: '<i class="fa fa-heart text-danger"></i>', habilitado: true },
     ]);
     // Sistemas de medición
     const sistemasMedicion = ref([

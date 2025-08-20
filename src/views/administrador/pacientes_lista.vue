@@ -49,6 +49,9 @@
         <button class="btn btn-warning btn-sm mx-1">
           <i class="fa fa-broom"></i>
         </button>
+        <button class="btn btn-primary btn-sm mx-1 d-flex align-items-center" @click="mostrarOffcanvas = true">
+          <i class="fa fa-plus me-2"></i> Agregar paciente
+        </button>
       </div>
     </template>
     <template #default>
@@ -103,6 +106,61 @@
               </tr>
             </template>
           </DataTable>
+          <!-- Offcanvas para agregar paciente -->
+          <div class="offcanvas offcanvas-end show" tabindex="-1" v-if="mostrarOffcanvas" style="visibility: visible; background: #fff; box-shadow: -2px 0 16px rgba(0,0,0,0.08); width: 400px;">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title"><i class="fa fa-user-plus me-2 text-primary"></i> Nuevo paciente</h5>
+              <button type="button" class="btn-close" @click="cerrarOffcanvasAgregar" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <form @submit.prevent="guardarPaciente">
+                <div class="mb-3">
+                  <label class="form-label">Nombre</label>
+                  <input v-model="nuevoPaciente.nombre" type="text" class="form-control" placeholder="Nombre" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Apellidos</label>
+                  <input v-model="nuevoPaciente.apellidos" type="text" class="form-control" placeholder="Apellidos" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">DNI</label>
+                  <input v-model="nuevoPaciente.dni" type="text" class="form-control" placeholder="DNI" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input v-model="nuevoPaciente.email" type="email" class="form-control" placeholder="Email" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Celular</label>
+                  <input v-model="nuevoPaciente.celular" type="text" class="form-control" placeholder="Celular" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Dirección</label>
+                  <input v-model="nuevoPaciente.direccion" type="text" class="form-control" placeholder="Dirección" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Seguro</label>
+                  <select v-model="nuevoPaciente.tiposeguro" class="form-select">
+                    <option value="">Seleccionar seguro</option>
+                    <option>SIS</option>
+                    <option>Particular</option>
+                    <option>EPS</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Estado</label>
+                  <select v-model="nuevoPaciente.estado" class="form-select">
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                  </select>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                  <button type="button" class="btn btn-light me-2" @click="cerrarOffcanvasAgregar">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </template>
@@ -239,17 +297,52 @@ export default defineComponent({
       { text: 'ACCIONES', width: '11%', key: 'acciones', type: 'string' as const, sortable: false, filterable: false },
     ]);
 
-    // Estado para offcanvas
+    // Estado para offcanvas detalle
     const pacienteSeleccionado = ref<any | null>(null);
+    // Estado para offcanvas agregar
+    const mostrarOffcanvas = ref(false);
+    // Modelo para nuevo paciente
+    const nuevoPaciente = ref({
+      nombre: '',
+      apellidos: '',
+      dni: '',
+      email: '',
+      celular: '',
+      direccion: '',
+      tiposeguro: '',
+      estado: 'Activo'
+    });
 
-    // Selección de fila sin abrir offcanvas
-    // El offcanvas se abre solo con el botón de acciones
+    // Abrir offcanvas detalle
     const abrirOffcanvas = (item: any) => {
       pacienteSeleccionado.value = item;
     };
-
+    // Cerrar offcanvas detalle
     const cerrarOffcanvas = () => {
       pacienteSeleccionado.value = null;
+    };
+    // Cerrar offcanvas agregar
+    const cerrarOffcanvasAgregar = () => {
+      mostrarOffcanvas.value = false;
+      nuevoPaciente.value = {
+        nombre: '',
+        apellidos: '',
+        dni: '',
+        email: '',
+        celular: '',
+        direccion: '',
+        tiposeguro: '',
+        estado: 'Activo'
+      };
+    };
+    // Guardar paciente
+    const guardarPaciente = () => {
+      if (!nuevoPaciente.value.nombre || !nuevoPaciente.value.apellidos || !nuevoPaciente.value.dni) return;
+      listaPacientes.value.push({
+        id: listaPacientes.value.length + 1,
+        ...nuevoPaciente.value
+      });
+      cerrarOffcanvasAgregar();
     };
 
     const onSelectionChange = () => {};
@@ -261,7 +354,11 @@ export default defineComponent({
       onSelectionChange,
       pacienteSeleccionado,
       cerrarOffcanvas,
-      abrirOffcanvas
+      abrirOffcanvas,
+      nuevoPaciente,
+      guardarPaciente,
+      cerrarOffcanvasAgregar,
+      mostrarOffcanvas
     };
   }
 });

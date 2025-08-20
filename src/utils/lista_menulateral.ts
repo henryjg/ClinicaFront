@@ -129,6 +129,13 @@ export const menuItems: MenuItem[] = [
   // CONFIGURACION
   //---------------------------------------------------
     {
+    tipe: 'titulo',
+    text: 'Configuración',
+    icon: '',
+    route: '',  
+    role_ids: [4]
+  },
+    {
     tipe: 'link',
     text: 'Antecedentes',
     icon: 'fas fa-solid fa-file-medical',
@@ -138,7 +145,7 @@ export const menuItems: MenuItem[] = [
   {
     tipe: 'link',
     text: 'Alergias',
-    icon: 'fas fa-solid fa-person-dots-from-line',
+    icon: 'fas fa-allergies',
     route: '/office/alergias',
     role_ids: [4] // Visible para Administrador y Licencias
   },
@@ -166,7 +173,7 @@ export const menuItems: MenuItem[] = [
   {
     tipe: 'link',
     text: 'Síntomas',
-    icon: 'fas fa-solid fa-head-side-cough',
+    icon: 'fas fa-solid fa-diagnoses',
     route: '/office/sintomas',
     role_ids: [4] // Visible para Administrador y Licencias
   },
@@ -180,7 +187,7 @@ export const menuItems: MenuItem[] = [
   {
     tipe: 'link',
     text: 'Examenes',
-    icon: 'fas fa-solid fa-exam',
+    icon: 'fas fa-vials',
     route: '/office/examenes',
     role_ids: [4] // Visible para Administrador y Licencias
   },
@@ -194,7 +201,7 @@ export const menuItems: MenuItem[] = [
 // ------------------------------------------------------------------
   {
     tipe: 'titulo',
-    text: 'Cupones',
+    text: 'General',
     icon: '',
     route: '',  
     role_ids: [4]
@@ -283,7 +290,7 @@ export const menuItems: MenuItem[] = [
   },
      {
     tipe: 'link',
-    text: 'Medico Editar',
+    text: 'Medico Perfil',
     icon: 'fas fa-solid fa-user',
     route: '/office/medico_editar',
     role_ids: [4] // Visible para Administrador y Licencias

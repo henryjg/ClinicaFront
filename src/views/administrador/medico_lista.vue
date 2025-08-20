@@ -36,10 +36,15 @@
       </div>
     </div>
   </div>
-
-  <!-- Tabla de médicos usando DataTablePaginacion -->
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Lista de médicos</h5>
+        <button class="btn btn-primary d-flex align-items-center" @click="mostrarOffcanvas = true">
+          <i class="fa fa-plus me-2"></i> Agregar médico
+        </button>
+      </div>
   <div class="card">
     <div class="card-body mx-0 p-1">
+
       <DataTablePaginacion
         :headers="headers"
         :items="listaMedicos"
@@ -63,6 +68,58 @@
           </tr>
         </template>
       </DataTablePaginacion>
+      <!-- Offcanvas para agregar médico -->
+      <div class="offcanvas offcanvas-end show" tabindex="-1" v-if="mostrarOffcanvas" style="visibility: visible; background: #fff; box-shadow: -2px 0 16px rgba(0,0,0,0.08); width: 400px;">
+        <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title"><i class="fa fa-user-md me-2 text-primary"></i> Nuevo médico</h5>
+          <button type="button" class="btn-close" @click="cerrarOffcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form @submit.prevent="guardarMedico">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input v-model="nuevoMedico.nombre" type="text" class="form-control" placeholder="Nombre" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Apellido</label>
+              <input v-model="nuevoMedico.apellido" type="text" class="form-control" placeholder="Apellido" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input v-model="nuevoMedico.email" type="email" class="form-control" placeholder="Email" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Contacto</label>
+              <input v-model="nuevoMedico.numero_contacto" type="text" class="form-control" placeholder="Número de contacto" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Celular</label>
+              <input v-model="nuevoMedico.celular" type="text" class="form-control" placeholder="Celular" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Especialidad</label>
+              <select v-model="nuevoMedico.especialidad" class="form-select">
+                <option value="">Seleccionar especialidad</option>
+                <option>Cardiología</option>
+                <option>Pediatría</option>
+                <option>Dermatología</option>
+                <option>Traumatología</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Estado</label>
+              <select v-model="nuevoMedico.estado" class="form-select">
+                <option>Activo</option>
+                <option>Inactivo</option>
+              </select>
+            </div>
+            <div class="d-flex justify-content-end mt-4">
+              <button type="button" class="btn btn-light me-2" @click="cerrarOffcanvas">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -110,9 +167,47 @@ export default defineComponent({
       }
     ]);
 
+    // Estado para mostrar/ocultar el offcanvas
+    const mostrarOffcanvas = ref(false);
+    // Modelo para nuevo médico
+    const nuevoMedico = ref({
+      nombre: '',
+      apellido: '',
+      email: '',
+      numero_contacto: '',
+      celular: '',
+      especialidad: '',
+      estado: 'Activo'
+    });
+
+    function cerrarOffcanvas() {
+      mostrarOffcanvas.value = false;
+      // Limpiar el modelo si se desea
+      nuevoMedico.value = {
+        nombre: '',
+        apellido: '',
+        email: '',
+        numero_contacto: '',
+        celular: '',
+        especialidad: '',
+        estado: 'Activo'
+      };
+    }
+
+    function guardarMedico() {
+      // Validación simple
+      if (!nuevoMedico.value.nombre || !nuevoMedico.value.apellido || !nuevoMedico.value.email) return;
+      listaMedicos.value.push({ ...nuevoMedico.value });
+      cerrarOffcanvas();
+    }
+
     return {
       headers,
-      listaMedicos
+      listaMedicos,
+      mostrarOffcanvas,
+      nuevoMedico,
+      cerrarOffcanvas,
+      guardarMedico
     };
   }
 });

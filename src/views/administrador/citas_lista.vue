@@ -134,10 +134,16 @@
 				</div>
 			</div>
 		</div>
-
+	<div class="d-flex justify-content-between align-items-center mb-2">
+				<h5 class="mb-0">Lista de citas</h5>
+				<button class="btn btn-primary d-flex align-items-center" @click="mostrarOffcanvas = true">
+					<i class="fa fa-plus me-2"></i> Agregar cita
+				</button>
+			</div>
 	<!-- Tabla de citas usando DataTablePaginacion -->
 	<div class="card">
 		<div class="card-body mx-0 p-1">
+		
 			<DataTablePaginacion
 				:headers="headers"
 				:items="listaCitas"
@@ -161,6 +167,60 @@
 					</tr>
 				</template>
 			</DataTablePaginacion>
+			<!-- Offcanvas para agregar cita -->
+			<div class="offcanvas offcanvas-end show" tabindex="-1" v-if="mostrarOffcanvas" style="visibility: visible; background: #fff; box-shadow: -2px 0 16px rgba(0,0,0,0.08); width: 400px;">
+				<div class="offcanvas-header border-bottom">
+					<h5 class="offcanvas-title"><i class="fa fa-calendar-plus me-2 text-primary"></i> Nueva cita</h5>
+					<button type="button" class="btn-close" @click="cerrarOffcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<form @submit.prevent="guardarCita">
+						<div class="mb-3">
+							<label class="form-label">Consultorio</label>
+							<select v-model="nuevaCita.consultorio" class="form-select">
+								<option value="">Seleccionar consultorio</option>
+								<option>Consultorio 1</option>
+								<option>Consultorio 2</option>
+								<option>Consultorio 3</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Médico</label>
+							<select v-model="nuevaCita.medico" class="form-select">
+								<option value="">Seleccionar médico</option>
+								<option>Dr. Ejemplo</option>
+								<option>Dr. Pérez</option>
+								<option>Dr. García</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Paciente</label>
+							<input v-model="nuevaCita.paciente" type="text" class="form-control" placeholder="Nombre del paciente" />
+						</div>
+						<div class="row mb-3">
+							<div class="col-6">
+								<label class="form-label">Hora inicio</label>
+								<input v-model="nuevaCita.hora_inicio" type="time" class="form-control" />
+							</div>
+							<div class="col-6">
+								<label class="form-label">Hora fin</label>
+								<input v-model="nuevaCita.hora_fin" type="time" class="form-control" />
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Estado</label>
+							<select v-model="nuevaCita.estado" class="form-select">
+								<option>Activo</option>
+								<option>Inactivo</option>
+							</select>
+						</div>
+						<div class="d-flex justify-content-end mt-4">
+							<button type="button" class="btn btn-light me-2" @click="cerrarOffcanvas">Cancelar</button>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -198,9 +258,45 @@ export default defineComponent({
 			}
 		]);
 
+		// Estado para mostrar/ocultar el offcanvas
+		const mostrarOffcanvas = ref(false);
+		// Modelo para nueva cita
+		const nuevaCita = ref({
+			consultorio: '',
+			medico: '',
+			paciente: '',
+			hora_inicio: '',
+			hora_fin: '',
+			estado: 'Activo'
+		});
+
+		function cerrarOffcanvas() {
+			mostrarOffcanvas.value = false;
+			// Limpiar el modelo si se desea
+			nuevaCita.value = {
+				consultorio: '',
+				medico: '',
+				paciente: '',
+				hora_inicio: '',
+				hora_fin: '',
+				estado: 'Activo'
+			};
+		}
+
+		function guardarCita() {
+			// Validación simple
+			if (!nuevaCita.value.consultorio || !nuevaCita.value.medico || !nuevaCita.value.paciente) return;
+			listaCitas.value.push({ ...nuevaCita.value });
+			cerrarOffcanvas();
+		}
+
 		return {
 			headers,
-			listaCitas
+			listaCitas,
+			mostrarOffcanvas,
+			nuevaCita,
+			cerrarOffcanvas,
+			guardarCita
 		};
 	}
 });
